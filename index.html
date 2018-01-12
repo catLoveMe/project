@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #target{
+            width: 50px;
+            height: 50px;
+            background-color: plum;
+        }
+        #element{
+            width: 50px;
+            height: 20px;
+            position: absolute;
+            background-color: #000066;
+            left: 1000px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="element"></div>
+<div id="target"></div>
+<script src="indexjs.js"></script>
+<script>
+    /* 元素 */
+    var element = document.getElementById("element"),
+            target = document.getElementById("target");
+    // 抛物线元素的的位置标记
+    var parabola = funParabola(element, target).mark();
+    // 抛物线运动的触发
+    document.body.onclick = function() {
+        element.style.marginLeft = "0px";
+        element.style.marginTop = "0px";
+        parabola.init();
+    };
+</script>
+</body>
+</html>
